@@ -6,7 +6,7 @@
 #    By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/14 13:22:09 by tsiguenz          #+#    #+#              #
-#    Updated: 2022/02/14 14:28:18 by tsiguenz         ###   ########.fr        #
+#    Updated: 2022/02/14 20:26:21 by tsiguenz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ OBJ_PATH = obj/
 
 # Names
 
-SRC = parsing.c
+SRC = main.c parsing.c
 
 OBJ_NAME = $(SRC:.c=.o)
 
@@ -29,9 +29,9 @@ OBJ = $(addprefix $(OBJ_PATH),$(OBJ_NAME))
 # Flags
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
-LIBFT = libft/libft.a -Ilibft
-INC = -I../include
+CFLAGS = -Wall -Wextra -Werror -g3
+LIBFT = -Llibft -lft
+INC = -Iinclude -Ilibft
 
 # Rules
 
@@ -42,7 +42,7 @@ $(NAME): $(OBJ)
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 	@mkdir -p obj
-	@$(CC) $(CFLAGS) $(INC) -Ilibft -o $@ -c $<
+	@$(CC) $(CFLAGS) $(INC) -o $@ -c $<
 
 all: $(NAME)
 
