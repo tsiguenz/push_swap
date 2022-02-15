@@ -6,7 +6,7 @@
 #    By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/14 13:22:09 by tsiguenz          #+#    #+#              #
-#    Updated: 2022/02/14 20:26:21 by tsiguenz         ###   ########.fr        #
+#    Updated: 2022/02/15 19:33:24 by tsiguenz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ OBJ_PATH = obj/
 
 # Names
 
-SRC = main.c parsing.c
+SRC = main.c parsing.c utils_stack.c
 
 OBJ_NAME = $(SRC:.c=.o)
 

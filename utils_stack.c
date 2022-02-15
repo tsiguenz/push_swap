@@ -1,31 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   utils_stack.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsiguenz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/14 17:40:11 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/02/15 19:32:06 by tsiguenz         ###   ########.fr       */
+/*   Created: 2022/02/15 19:27:42 by tsiguenz          #+#    #+#             */
+/*   Updated: 2022/02/15 19:32:26 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include <stdio.h>
-# include "libft.h"
-
-typedef struct s_stack
+void	print_stack(t_stack *begin)
 {
-	int				value;
-	int				index;
-	struct s_stack	*next;
-	struct s_stack	*head;
-	struct s_stack	*tail;
-}				t_stack;
+	t_stack	*tmp;
 
-int		parsing(int argc, char **argv);
-void	print_stack(t_stack *begin);
-void	free_stack(t_stack *begin);
-#endif
+	tmp = begin;
+	while (tmp != NULL)
+	{
+		ft_printf("---> %d\n", tmp->value);
+		tmp = tmp->next;
+	}
+}
+
+void	free_stack(t_stack *begin)
+{
+	t_stack	*current;
+	t_stack	*next;
+
+	current = begin;
+	while (current != NULL)
+	{
+		next = current->next;
+		free(current);
+		current = next;
+	}
+	begin = 0;
+}
