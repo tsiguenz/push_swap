@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 13:18:18 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/02/16 16:28:04 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/02/16 19:41:09 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,38 +38,13 @@ static t_stack	*fill_stack(int argc, char **argv)
 	{
 		new = malloc(sizeof(t_stack));
 		if (!new)
-			return (NULL);
+			return (begin);
 		new->value = ft_atoi(argv[i]);
 		new->next = NULL;
 		tmp->next = new;
 		tmp = new;
 	}
 	return (begin);
-}
-
-/******************************************************************************/
-/*                                                                            */
-/*	Function : static int	check_issort(t_stack **stack)                     */
-/*                                                                            */
-/*	This function check if the stack contain duplicates.                      */
-/*                                                                            */
-/******************************************************************************/
-
-static int	check_issort(t_stack **stack)
-{
-	t_stack	*i;
-	t_stack	*j;
-
-	i = *stack;
-	j = i->next;
-	while (j != NULL)
-	{
-		if (i->value > j->value)
-			return (0);
-		i = i->next;
-		j = i->next;
-	}
-	return (1);
 }
 
 /******************************************************************************/
@@ -144,20 +119,20 @@ static int	check_arg_isdigit(int argc, char **argv)
 /*                                                                            */
 /******************************************************************************/
 
-int	parsing(int argc, char **argv)
+int	parsing(int argc, char **argv, t_stack **a)
 {
 	t_stack	*first;
-	t_stack	**a;
 
 	if (check_arg_isdigit(argc, argv))
 		return (1);
 	first = fill_stack(argc, argv);
 	if (first == NULL)
 		return (write(1, "Error while creating the stack\n", 32));
-	a = &first;
+	*a = first;
 	if (check_duplicate(a))
+	{
+		free_stack(a);
 		return (1);
-	if (check_issort(a))
-		return (0);
+	}
 	return (0);
 }
