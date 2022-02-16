@@ -6,17 +6,25 @@
 /*   By: tsiguenz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 19:27:42 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/02/15 19:32:26 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/02/16 17:21:29 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	print_stack(t_stack *begin)
+/******************************************************************************/
+/*                                                                            */
+/*	Function : void	print_stack(t_stack **stack)                              */
+/*                                                                            */
+/*	This function print the stack passed in parameter.                        */
+/*                                                                            */
+/******************************************************************************/
+
+void	print_stack(t_stack **stack)
 {
 	t_stack	*tmp;
 
-	tmp = begin;
+	tmp = *stack;
 	while (tmp != NULL)
 	{
 		ft_printf("---> %d\n", tmp->value);
@@ -24,17 +32,25 @@ void	print_stack(t_stack *begin)
 	}
 }
 
-void	free_stack(t_stack *begin)
+/******************************************************************************/
+/*                                                                            */
+/*	Function : void	free_stack(t_stack **stack)                               */
+/*                                                                            */
+/*	This function check if the stack contain duplicates.                      */
+/*                                                                            */
+/******************************************************************************/
+
+void	free_stack(t_stack **stack)
 {
 	t_stack	*current;
 	t_stack	*next;
 
-	current = begin;
+	current = *stack;
 	while (current != NULL)
 	{
 		next = current->next;
 		free(current);
 		current = next;
 	}
-	begin = 0;
+	*stack = 0;
 }
