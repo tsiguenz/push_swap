@@ -1,44 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_is_int_overflow.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsiguenz <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/14 20:07:02 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/02/18 19:13:29 by tsiguenz         ###   ########.fr       */
+/*   Created: 2022/02/18 15:03:11 by tsiguenz          #+#    #+#             */
+/*   Updated: 2022/02/18 15:03:15 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
 /******************************************************************************/
 /*                                                                            */
-/*	Function : int	main(int argc, char **argv)                               */
+/*	Function : int	ft_is_int_overflow(char *str)                             */
 /*                                                                            */
-/*	argv = list of the value to sort.                                         */
+/*	This fuction check if the string in parameter is a int overflow.          */
+/*	The string need to be formated with only digits and - for negative.       */
 /*                                                                            */
 /******************************************************************************/
 
-int	main(int argc, char **argv)
+#include "libft.h"
+
+int	ft_is_int_overflow(char *str)
 {
-	t_stack	*a;
-	t_stack	*b;
+	long	nb;
 
-	a = NULL;
-	b = NULL;
-	if (parsing(argc, argv, &a))
+	nb = atol(str);
+	if (nb < -2147483648l)
 		return (1);
-	if (stack_is_sort(&a))
-	{
-		free_stack(&a);
-		return (0);
-	}
-	print_stack(&a, STACK_A);
-	rrr(&a, STACK_A);
-	rr(&a, STACK_A);
-	print_stack(&a, STACK_A);
-	free_stack(&a);
-	free_stack(&b);
+	if (nb > 2147483647l)
+		return (1);
+	if (ft_strlen(str) > 12)
+		return (1);
 	return (0);
 }

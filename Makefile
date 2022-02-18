@@ -6,7 +6,7 @@
 #    By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/14 13:22:09 by tsiguenz          #+#    #+#              #
-#    Updated: 2022/02/15 22:17:46 by tsiguenz         ###   ########.fr        #
+#    Updated: 2022/02/18 19:10:53 by tsiguenz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ OBJ_PATH = obj/
 
 # Names
 
-SRC_NAME = main.c parsing.c utils_stack.c
+SRC_NAME = main.c parsing.c utils_stack.c swap.c push.c rotate.c reverse_rotate.c
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 
@@ -31,7 +31,7 @@ SRC = $(addprefix $(SRC_PATH),$(SRC_NAME))
 # Flags
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 LIBFT = -Llibft -lft
 INC = -Iinclude -Ilibft
 
@@ -51,12 +51,12 @@ all: $(NAME)
 clean:
 	@make clean -C libft/ --no-print-directory
 	@echo "Delete $(OBJ_PATH)"
-	rm -rf $(OBJ_PATH)
+	@rm -rf $(OBJ_PATH)
 
 fclean:	clean
 	@make fclean -C libft/ --no-print-directory
 	@echo "Delete $(NAME)"
-	rm -rf $(NAME)
+	@rm -rf $(NAME)
 
 re:	fclean all
 

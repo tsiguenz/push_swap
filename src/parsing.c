@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 13:18:18 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/02/16 19:41:09 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/02/18 15:01:31 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,8 @@ static int	check_arg_isdigit(int argc, char **argv)
 		i = 0;
 		if (argv[y][i] == '-')
 			i++;
-		if (!argv[y][i] || (argv[y][i] == '0' && argv[y][i + 1]))
+		if (ft_is_int_overflow(argv[y]) || !argv[y][i] ||
+			(argv[y][i] == '0' && argv[y][i + 1]))
 			return (write(1, "Error\n", 6));
 		while (argv[y][i])
 		{

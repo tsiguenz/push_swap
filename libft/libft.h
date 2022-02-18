@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 23:22:38 by thibautsi         #+#    #+#             */
-/*   Updated: 2022/02/02 20:07:18 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/02/18 15:03:29 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,5 @@ int			ft_max(int a, int b);
 int			ft_abs(int a);
 int			ft_printf(const char *format, ...);
 void		ft_print_bin(char *str, char c);
+int			ft_is_int_overflow(char *str);
 #endif //LIBFT_H

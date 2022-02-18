@@ -6,7 +6,7 @@
 /*   By: tsiguenz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 19:27:42 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/02/16 19:52:37 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/02/18 19:13:06 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,23 @@
 /*                                                                            */
 /******************************************************************************/
 
-void	print_stack(t_stack **stack)
+void	print_stack(t_stack **stack, int flag)
 {
 	t_stack	*tmp;
 
 	tmp = *stack;
+	if (flag == STACK_A)
+		write(1, "Stack a :\n", 10);
+	else if (flag == STACK_B)
+		write(1, "Stack b :\n", 10);
+	write(1, "----------\n", 11);
 	while (tmp != NULL)
 	{
 		ft_printf("---> %d\n", tmp->value);
 		tmp = tmp->next;
 	}
+	write(1, "----------\n", 11);
+	write(1, "\n", 1);
 }
 
 /******************************************************************************/
@@ -57,13 +64,13 @@ void	free_stack(t_stack **stack)
 
 /******************************************************************************/
 /*                                                                            */
-/*	Function : int	is_sort(t_stack **stack)                                  */
+/*	Function : int	stack_is_sort(t_stack **stack)                            */
 /*                                                                            */
 /*	This function check if the stack contain duplicates.                      */
 /*                                                                            */
 /******************************************************************************/
 
-int	is_sort(t_stack **stack)
+int	stack_is_sort(t_stack **stack)
 {
 	t_stack	*i;
 	t_stack	*j;
@@ -78,4 +85,29 @@ int	is_sort(t_stack **stack)
 		j = i->next;
 	}
 	return (1);
+}
+
+/******************************************************************************/
+/*                                                                            */
+/*	Function : int	stacklen(t_stack **stack)                                 */
+/*                                                                            */
+/*	Return the length of the stack.                                           */
+/*                                                                            */
+/******************************************************************************/
+
+int	stacklen(t_stack **stack)
+{
+	int		res;
+	t_stack	*current;
+
+	res = 0;
+	if (stack == NULL)
+		return (0);
+	current = *stack;
+	while (current != NULL)
+	{
+		res++;
+		current = current->next;
+	}
+	return (res);
 }
