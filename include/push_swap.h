@@ -6,7 +6,7 @@
 /*   By: tsiguenz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 17:40:11 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/02/18 19:07:06 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/02/19 18:52:07 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void	print_stack(t_stack **stack, int flag);
 void	free_stack(t_stack **stack);
 int		stack_is_sort(t_stack **stack);
 int		stacklen(t_stack **stack);
+void	set_index(t_stack **a);
 
 /*	Authorized operations                                                                 */
 

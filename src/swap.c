@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 15:16:57 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/02/18 17:43:55 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/02/19 17:46:29 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ void	swap(t_stack **stack, int flag)
 
 void	ss(t_stack **a, t_stack **b)
 {
+	if (a == NULL || b == NULL)
+		return ;
 	swap(a, STACK_A_B);
 	swap(b, STACK_A_B);
 	write(1, "ss\n", 3);

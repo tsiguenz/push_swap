@@ -6,7 +6,7 @@
 /*   By: tsiguenz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 19:27:42 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/02/18 19:13:06 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/02/19 17:48:03 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ void	print_stack(t_stack **stack, int flag)
 {
 	t_stack	*tmp;
 
+	if (stack == NULL)
+		return ;
 	tmp = *stack;
 	if (flag == STACK_A)
 		write(1, "Stack a :\n", 10);
@@ -52,6 +54,8 @@ void	free_stack(t_stack **stack)
 	t_stack	*current;
 	t_stack	*next;
 
+	if (stack == NULL)
+		return ;
 	current = *stack;
 	while (current != NULL)
 	{

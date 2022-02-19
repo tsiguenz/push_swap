@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 17:38:13 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/02/18 18:55:17 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/02/19 17:46:07 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ void	rotate(t_stack **stack, int flag)
 
 void	rr(t_stack **a, t_stack **b)
 {
+	if (a == NULL || b == NULL)
+		return ;
 	rotate(a, STACK_A_B);
 	rotate(b, STACK_A_B);
 	write(1, "rr\n", 3);
