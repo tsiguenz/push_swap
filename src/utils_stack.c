@@ -6,7 +6,7 @@
 /*   By: tsiguenz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 19:27:42 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/02/19 17:48:03 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/02/19 21:35:47 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	print_stack(t_stack **stack, int flag)
 	write(1, "----------\n", 11);
 	while (tmp != NULL)
 	{
-		ft_printf("---> %d\n", tmp->value);
+		ft_printf("---> %d   index = %d\n", tmp->value, tmp->index);
 		tmp = tmp->next;
 	}
 	write(1, "----------\n", 11);
@@ -49,13 +49,13 @@ void	print_stack(t_stack **stack, int flag)
 /*                                                                            */
 /******************************************************************************/
 
-void	free_stack(t_stack **stack)
+int	free_stack(t_stack **stack)
 {
 	t_stack	*current;
 	t_stack	*next;
 
 	if (stack == NULL)
-		return ;
+		return (0);
 	current = *stack;
 	while (current != NULL)
 	{
@@ -64,6 +64,7 @@ void	free_stack(t_stack **stack)
 		current = next;
 	}
 	*stack = 0;
+	return (0);
 }
 
 /******************************************************************************/
