@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 13:18:18 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/02/19 18:54:32 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/02/20 17:58:27 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ static t_stack	*fill_stack(int argc, char **argv)
 		if (!new)
 			return (begin);
 		new->value = ft_atoi(argv[i]);
+		new->index = 0;
 		new->next = NULL;
 		tmp->next = new;
 		tmp = new;

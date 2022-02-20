@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   set_index.c                                        :+:      :+:    :+:   */
+/*   sort_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/20 17:48:10 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/02/20 17:54:38 by tsiguenz         ###   ########.fr       */
+/*   Created: 2022/02/20 18:27:02 by tsiguenz          #+#    #+#             */
+/*   Updated: 2022/02/20 19:42:39 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,30 +14,34 @@
 
 /******************************************************************************/
 /*                                                                            */
-/*	Function :  int	set_index(t_stack **a)                                    */
+/*	Function :  void	radix_sort(t_stack **a, t_stack **b)                  */
 /*                                                                            */
-/*	Set the index for the stack a.                                            */
+/*	Sort the stack using the index in binary.                                 */
+/*	Start to the Lowest Significant Digit (LSD).                              */
 /*                                                                            */
 /******************************************************************************/
 
-int	set_index(t_stack **a)
+void	radix_sort(t_stack **a, t_stack **b)
 {
-	t_stack	*current;
-	t_stack	*tmp;
+	unsigned int	i;
+	int				j;
+	int				size;
 
-	if (a == NULL)
-		return (1);
-	current = *a;
-	while (current != NULL)
+	i = 0;
+	size = stacklen(a);
+	while (stack_is_sort(a) == 0 || stacklen(b) != 0)
 	{
-		tmp = *a;
-		while (tmp != NULL)
+		j = 0;
+		while (j < size)
 		{
-			if (current->value > tmp->value)
-				current->index++;
-			tmp = tmp->next;
+			if ((((*a)->index >> i) & 1u) == 1u)
+				rotate(a, STACK_A);
+			else
+				push(a, b, STACK_B);
+			j++;
 		}
-		current = current->next;
+		while (stacklen(b) != 0)
+			push(a, b, STACK_A);
+		i++;
 	}
-	return (0);
 }

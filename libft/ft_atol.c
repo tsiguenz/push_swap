@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: debian <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/18 01:00:41 by debian            #+#    #+#             */
-/*   Updated: 2022/02/20 19:50:15 by tsiguenz         ###   ########.fr       */
+/*   Created: 2022/02/20 19:47:05 by tsiguenz          #+#    #+#             */
+/*   Updated: 2022/02/20 19:54:30 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+long	ft_atol(const char *nptr)
 {
-	int	res;
-	int	neg;
-	int	i;
+	long	res;
+	long	neg;
+	int		i;
 
 	res = 0;
 	neg = 1;

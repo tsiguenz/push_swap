@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 23:22:38 by thibautsi         #+#    #+#             */
-/*   Updated: 2022/02/18 15:03:29 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/02/20 19:51:46 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,4 +73,6 @@ int			ft_abs(int a);
 int			ft_printf(const char *format, ...);
 void		ft_print_bin(char *str, char c);
 int			ft_is_int_overflow(char *str);
+long		ft_atol(const char *nptr);
+int			ft_isspace(char c);
 #endif //LIBFT_H

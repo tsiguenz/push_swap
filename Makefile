@@ -6,7 +6,7 @@
 #    By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/14 13:22:09 by tsiguenz          #+#    #+#              #
-#    Updated: 2022/02/19 18:13:33 by tsiguenz         ###   ########.fr        #
+#    Updated: 2022/02/20 18:30:06 by tsiguenz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ OBJ_PATH = obj/
 # Names
 
 SRC_NAME = 	main.c parsing.c utils_stack.c swap.c push.c rotate.c \
-			reverse_rotate.c set_index.c
+			reverse_rotate.c set_index.c sort_stack.c
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 

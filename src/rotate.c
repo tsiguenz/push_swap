@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 17:38:13 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/02/19 17:46:07 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/02/20 19:21:09 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	rotate(t_stack **stack, int flag)
 	t_stack	*elem1;
 	t_stack	*curr;
 
-	if (stacklen(stack) < 1)
+	if (stacklen(stack) <= 1)
 		return ;
 	elem1 = *stack;
 	curr = *stack;

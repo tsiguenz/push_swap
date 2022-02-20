@@ -6,7 +6,7 @@
 #    By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/08 19:56:21 by tsiguenz          #+#    #+#              #
-#    Updated: 2022/02/18 15:02:06 by tsiguenz         ###   ########.fr        #
+#    Updated: 2022/02/20 19:52:21 by tsiguenz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,7 +67,9 @@ SRC_NAME = 	ft_atoi.c \
 			ft_printstr.c \
 			ft_printnbr.c \
 			ft_print_bin.c \
-			ft_is_int_overflow.c
+			ft_is_int_overflow.c \
+			ft_atol.c \
+			ft_isspace.c
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 CC = gcc

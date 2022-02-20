@@ -6,7 +6,7 @@
 /*   By: tsiguenz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 20:07:02 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/02/19 22:29:34 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/02/20 21:12:41 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,9 @@ int	main(int argc, char **argv)
 	b = NULL;
 	if (parsing(argc, argv, &a) || stack_is_sort(&a) || set_index(&a))
 		return (free_stack(&a));
-	print_stack(&a, STACK_A);
+//	print_stack(&a, STACK_A);
+	radix_sort(&a, &b);
+//	print_stack(&a, STACK_A);
 	free_stack(&a);
 	free_stack(&b);
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: tsiguenz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 17:40:11 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/02/19 22:32:35 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/02/20 18:32:10 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,8 @@ void	rotate(t_stack **stack, int flag);
 void	rr(t_stack **a, t_stack **b);
 void	reverse_rotate(t_stack **stack, int flag);
 void	rrr(t_stack **a, t_stack **b);
+/*	Sorting function                                                          */
+
+void	radix_sort(t_stack **a, t_stack **b);
+
 #endif
