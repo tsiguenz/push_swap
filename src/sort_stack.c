@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 18:27:02 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/02/20 22:28:53 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/02/20 22:38:05 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,20 +22,20 @@
 
 void	sort_3elem(t_stack **a)
 {
-		if ((*a)->index < (*a)->next->index)
-		{
-			reverse_rotate(a, STACK_A);
-			if (stack_is_sort(a) == 0)
-				swap(a, STACK_A);
-		}
-		else if ((*a)->index - (*a)->next->index == 1)
-		{
+	if ((*a)->index < (*a)->next->index)
+	{
+		reverse_rotate(a, STACK_A);
+		if (stack_is_sort(a) == 0)
 			swap(a, STACK_A);
-			if (stack_is_sort(a) == 0)
-				reverse_rotate(a, STACK_A);
-		}
-		else
-			rotate(a, STACK_A);
+	}
+	else if ((*a)->index - (*a)->next->index == 1)
+	{
+		swap(a, STACK_A);
+		if (stack_is_sort(a) == 0)
+			reverse_rotate(a, STACK_A);
+	}
+	else
+		rotate(a, STACK_A);
 }
 
 /******************************************************************************/
