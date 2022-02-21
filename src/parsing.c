@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 13:18:18 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/02/20 22:37:17 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/02/21 12:58:43 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,8 +129,8 @@ int	parsing(int argc, char **argv, t_stack **a)
 	if (check_arg_isdigit(argc, argv))
 		return (1);
 	first = fill_stack(argc, argv);
-	if (first == NULL)
-		return (write(1, "Error while creating the stack\n", 32));
+	if (first == NULL || stacklen(&first) != argc - 1)
+		return (free_stack(&first) || 1);
 	*a = first;
 	if (check_duplicate(a))
 	{
