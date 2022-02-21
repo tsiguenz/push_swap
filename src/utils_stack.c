@@ -6,7 +6,7 @@
 /*   By: tsiguenz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 19:27:42 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/02/20 22:50:46 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/02/21 10:48:48 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,8 @@ int	stack_is_sort(t_stack **stack)
 	t_stack	*i;
 	t_stack	*j;
 
+	if (stacklen(stack) == 0)
+		return (0);
 	i = *stack;
 	j = i->next;
 	while (j != NULL)

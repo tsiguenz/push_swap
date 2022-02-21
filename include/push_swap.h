@@ -6,7 +6,7 @@
 /*   By: tsiguenz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 17:40:11 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/02/20 22:29:33 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/02/21 10:45:03 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,5 @@ void	rrr(t_stack **a, t_stack **b);
 
 void	radix_sort(t_stack **a, t_stack **b);
 void	sort_3elem(t_stack **a);
+void	sort_5elem(t_stack **a, t_stack **b);
 #endif

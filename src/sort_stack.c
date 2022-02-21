@@ -6,11 +6,41 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 18:27:02 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/02/20 22:38:05 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/02/21 11:03:47 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+/******************************************************************************/
+/*                                                                            */
+/*	Function :   void	sort_5elem(t_stack **a, t_stack **b)                  */
+/*                                                                            */
+/*	Extract index 0 and 1 to a, sort a and repush b sort backward.            */
+/*                                                                            */
+/******************************************************************************/
+
+void	sort_5elem(t_stack **a, t_stack **b)
+{
+	int	i;
+	int	size;
+
+	i = 0;
+	size = stacklen(a);
+	while (i < size)
+	{
+		if ((*a)->index == 0 || (*a)->index == 1)
+			push(a, b, STACK_B);
+		else
+			rotate(a, STACK_A);
+		i++;
+	}
+	sort_3elem(a);
+	if (stack_is_sort(b) == 1)
+		swap(b, STACK_B);
+	push(a, b, STACK_A);
+	push(a, b, STACK_A);
+}
 
 /******************************************************************************/
 /*                                                                            */
@@ -22,6 +52,8 @@
 
 void	sort_3elem(t_stack **a)
 {
+	if (stack_is_sort(a) == 1)
+		return ;
 	if ((*a)->index < (*a)->next->index)
 	{
 		reverse_rotate(a, STACK_A);
