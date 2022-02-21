@@ -32,7 +32,7 @@ SRC = $(addprefix $(SRC_PATH),$(SRC_NAME))
 # Flags
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror
 LIBFT = -Llibft -lft
 INC = -Iinclude -Ilibft
 
