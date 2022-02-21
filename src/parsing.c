@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 13:18:18 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/02/21 12:58:43 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/02/21 16:09:09 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ static int	check_duplicate(t_stack **stack)
 		while (j != NULL)
 		{
 			if (i->value == j->value)
-				return (write(1, "Error\n", 6));
+				return (write(2, "Error\n", 6));
 			j = j->next;
 		}
 		i = i->next;
@@ -101,11 +101,11 @@ static int	check_arg_isdigit(int argc, char **argv)
 			i++;
 		if (ft_is_int_overflow(argv[y]) || !argv[y][i] ||
 			(argv[y][i] == '0' && argv[y][i + 1]))
-			return (write(1, "Error\n", 6));
+			return (write(2, "Error\n", 6));
 		while (argv[y][i])
 		{
 			if (!ft_isdigit(argv[y][i]))
-				return (write(1, "Error\n", 6));
+				return (write(2, "Error\n", 6));
 			i++;
 		}
 		y++;
